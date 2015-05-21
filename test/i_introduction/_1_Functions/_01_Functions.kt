@@ -1,6 +1,5 @@
 package i_introduction._1_Functions
 
-import kotlin.test.*
 import org.junit.Test as test
 import org.junit.Assert
 
