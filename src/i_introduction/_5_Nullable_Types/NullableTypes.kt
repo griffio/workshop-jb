@@ -61,10 +61,12 @@ fun todoTask5(client: Client?, message: String?, mailer: Mailer) = TODO(
     references = { JavaCode5().sendMessageToClient(client, message, mailer) }
 )
 
-fun sendMessageToClient(
-        client: Client?, message: String?, mailer: Mailer
-) {
-    todoTask5(client, message, mailer)
+fun sendMessageToClient(client: Client?, message: String?, mailer: Mailer) {
+
+    if (client?.personalInfo?.email != null && message != null) {
+        mailer.sendMessage(client?.personalInfo?.email, message)
+    }
+
 }
 
 class Client (val personalInfo: PersonalInfo?)
